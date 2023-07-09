@@ -1,0 +1,35 @@
+
+.text{
+    font-size:.6rem;
+    font-weight:bold;
+}
+.material-icons{
+    cursor: pointer;
+}
+
+.descripcion{
+    box-shadow: 3px 3px 15px 1px rgb(158, 158, 158);
+}
+.btn-primary {
+    background-color: black;
+    border-color: black;
+}
+
+.btn-primary:hover {
+    background-color: black;
+    border-color: black;
+}
+
+.bi-archive-fill {
+    color: black;
+}
+
+
+.bi-archive-fill:hover {
+    color: red;
+}
+
+.detalle{
+    color: white;
+    text-decoration: none;
+}

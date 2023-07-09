@@ -1,10 +1,26 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import NavBar from './componets/header/Navbar'
+import ItemListContainer from './componets/main/ItemListContainer'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle'
+import Cart from './componets/cart/cart'
+import Stripe from './componets/stripe/Stripe'
+import Principal from './componets/main/Principal'
+import Footer from './componets/Footer/footer'
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+   <BrowserRouter>
+      <NavBar />
+         <Routes>
+            <Route path="/" element={<Principal />}/>
+            <Route path="/products" element={<ItemListContainer />}/>
+            <Route path="/cart" element={<Cart />}/>
+            <Route path="/stripe/:cid" element={<Stripe />} />
+         </Routes>
+      <Footer/>
+   </BrowserRouter>
 )
