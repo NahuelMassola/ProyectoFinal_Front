@@ -8,14 +8,12 @@ import axios from "axios";
 
 const Login = ({ show, handleClose }) => {
   const fetchLogin = async (valores, { resetForm }) => {
-   
-   try {
+    try {
         const res = await axios({
         url:"http://localhost:8080/api/session/login",
         method: 'POST',
         data: valores,
         withCredentials: true,
-                
     }) 
     
     const data = res.data
@@ -42,12 +40,10 @@ const Login = ({ show, handleClose }) => {
         confirmButtonText: "Continuar",
       }).then((result) => {
         if (result.isConfirmed) {
-          
           resetForm();
           handleClose();
           localStorage.setItem('user',JSON.stringify(data.user))
           localStorage.setItem('token',JSON.stringify(data.token))
-                                        
         }
       });
     }
@@ -67,8 +63,6 @@ const Login = ({ show, handleClose }) => {
     });
   }
 } 
- 
-      
 
   return (
     <>

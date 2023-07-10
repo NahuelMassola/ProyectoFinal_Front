@@ -57,9 +57,7 @@ const Cart =()=> {
   }
 
     useEffect(()=>{
-      
     const renderCart = async()=>{
-        
     try {  
       const res = await axios({
       url:`http://localhost:8080/api/carts/${cid}`,

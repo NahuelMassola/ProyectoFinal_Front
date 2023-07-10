@@ -39,10 +39,9 @@ const NavBar =()=> {
         Navigate('/')
       }  
     });
-} 
+  }
 
-
-  return(
+    return(
       <>
       <div className="container-fluid navbar2">
       <div className="container ">
@@ -68,5 +67,5 @@ const NavBar =()=> {
       </div>
       </>
     )
-}   
+  }
 export default NavBar;

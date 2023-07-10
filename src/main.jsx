@@ -9,6 +9,7 @@ import Cart from './componets/cart/cart'
 import Stripe from './componets/stripe/Stripe'
 import Principal from './componets/main/Principal'
 import Footer from './componets/Footer/footer'
+import Contacto from './componets/contacto/Contacto'
 
 
 
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/products" element={<ItemListContainer />}/>
             <Route path="/cart" element={<Cart />}/>
             <Route path="/stripe/:cid" element={<Stripe />} />
+            <Route path="/contacto" element={<Contacto />}/>
          </Routes>
       <Footer/>
    </BrowserRouter>

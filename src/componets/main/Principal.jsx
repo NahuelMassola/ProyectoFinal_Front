@@ -13,7 +13,7 @@ const Principal = () => {
     return (
         <>
         <div className="container-fluid ">
-            <h1 className="text-center m-5">{`Bienvenido a Tu Tienda Online!!!"`}</h1>
+            <h1 className="text-center m-5">{`Bienvenidos a I LOVE VITA `}</h1>
         </div>
         <div className="container-fluid">
         <Link to='/products'>

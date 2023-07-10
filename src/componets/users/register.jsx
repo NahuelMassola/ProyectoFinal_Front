@@ -178,7 +178,6 @@ const Register = ({ show, handleClose }) => {
                     )}/>
                   </div>
                       <button type="submit" >Enviar</button>
-                      {formEnviado && <p className="exito">Formulario enviado con exito!!!</p>}
                 </Form>
               </Modal.Body>
               <Modal.Footer>
