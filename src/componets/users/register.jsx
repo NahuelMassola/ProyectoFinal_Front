@@ -121,8 +121,6 @@ const Register = ({ show, handleClose }) => {
                       name="firstName"
                       placeholder="Nombre"
                       id="firstName"
-                      
-                      
                     />
                     <ErrorMessage name="firstName" component={()=>(
                       <div className="error">{errors.firstName}</div>

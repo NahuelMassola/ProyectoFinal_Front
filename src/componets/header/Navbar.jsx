@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Logo from './logo';
 import Login from '../users/login';
 import Register from '../users/register';
+import addProduct from '../main/addProduct';
 import Carrito from './CardWidget';
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
@@ -11,12 +12,15 @@ import Swal from 'sweetalert2';
 
 const NavBar =()=> {
   const Navigate = useNavigate()
-  const [show , setShow] = useState(false);
+  const [show , setShow] = useState(false); 
   const [showr , setShowr] = useState(false);
-  const handleClose = () =>setShow(false);
-  const handleCloser = () =>setShowr(false);
-  const handleShow = ()=> setShow(true)
-  const handleShowr = ()=>setShowr(true)
+  const [showa , setShowa] = useState(false);         
+  const handleClose = () =>setShow(false); 
+  const handleShow = ()=> setShow(true) 
+  const handleClosea = () =>setShowa(false);
+  const handleShowa = ()=> setShowa(true)
+  const handleCloser = () =>setShowr(false); //cerrar register
+  const handleShowr = ()=>setShowr(true) // mostrar register
   const handlelogout =async()=>{
 
     const res = await axios({
@@ -68,7 +72,32 @@ const NavBar =()=> {
       </div>
       </>
     ) 
-    } return (
+    } if(infouser.rol === "administrador") {
+    return (
+      <>
+      <div className="container-fluid navbar2">
+      <div className="container ">
+        <div className="row ">
+          <div className="col col-lg-5 d-flex  justify-content-start">
+            <Nav.Link className='text-white m-3' href="/">Inicio</Nav.Link>
+            <Nav.Link className='text-white m-3' href="/contacto">Contacto</Nav.Link>
+            <Nav.Link className='text-white m-3' href="/products">productos</Nav.Link>
+          </div>
+          <div className="col col-lg-2 text-center">
+            <Logo/>
+          </div>
+          <div className="col col-lg-5 d-flex justify-content-end">
+          <Nav.Link className='text-white m-3' href="#addproduct" onClick={handleShowa}>Agregar Producto</Nav.Link>
+            <Nav.Link className='text-white m-3' href="#logout" onClick={handlelogout}>cerrar Session </Nav.Link>
+            <Carrito/>
+          </div>
+          {showa &&  <addProduct show={showa} handleClose={handleClosea} />}
+          {showr &&  <Register show={showr} handleClose={handleCloser} />}
+        </div>
+      </div>
+      </div>
+      </>
+    )}  return (
       <>
       <div className="container-fluid navbar2">
       <div className="container ">
@@ -85,12 +114,12 @@ const NavBar =()=> {
             <Nav.Link className='text-white m-3' href="#logout" onClick={handlelogout}>cerrar Session </Nav.Link>
             <Carrito/>
           </div>
-          {show && <Login show={show} handleClose={handleClose}/>}
           {showr &&  <Register show={showr} handleClose={handleCloser} />}
         </div>
       </div>
       </div>
       </>
     )
+
   }
 export default NavBar;

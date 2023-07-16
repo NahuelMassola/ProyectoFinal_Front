@@ -87,13 +87,11 @@ const Login = ({ show, handleClose }) => {
             errores.email =
               "El Email solo puede contener letras, numeros, giones y guion bajo.";
           }
-
           if (!valores.password) {
             errores.password = "Ingresar un Password";
           } else if (!/^.{4,12}$/.test(valores.password)) {
             errores.password = "EL password debe contener de 4 a 12 digitos";
           }
-
           return errores;
         }}
         onSubmit={(valores, { resetForm }) => {
@@ -131,7 +129,6 @@ const Login = ({ show, handleClose }) => {
                     name="password"
                     placeholder="1234"
                     id="password"
-                    
                   />
                   <ErrorMessage
                     name="password"
