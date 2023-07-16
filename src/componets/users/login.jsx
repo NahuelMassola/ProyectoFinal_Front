@@ -5,8 +5,11 @@ import Modal from "react-bootstrap/Modal";
 import "./login.css";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ show, handleClose }) => {
+  const navigate = useNavigate()
+
   const fetchLogin = async (valores, { resetForm }) => {
     try {
         const res = await axios({
@@ -42,6 +45,7 @@ const Login = ({ show, handleClose }) => {
         if (result.isConfirmed) {
           resetForm();
           handleClose();
+          navigate('/')
           localStorage.setItem('user',JSON.stringify(data.user))
           localStorage.setItem('token',JSON.stringify(data.token))
         }

@@ -5,7 +5,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+
 
 
 
@@ -45,26 +45,27 @@ export const Items =({info})=>{
                
             })
          })
+
    return (
+      <>
       <div className="col-md-3  d-flex justify-content-center">
          <Card style={{ width: '20rem' }} className="mt-3">
-         <Card.Body className='text-center'>
-         <img src={thumbnail} className='img-fluid' width="200"  alt={title}/>
+         <Card.Body className='text-center' >
+         <div><img src={thumbnail} className='img-fluid' width="200" height="250"  alt={title}/></div>
          <Card.Title className='text-center mt-2'>{title}</Card.Title>
          <Card.Text className='text-center'>
+            <p>{description}</p>
             <h4 className="card-text">$ {price}</h4>
          </Card.Text>
             <div className='d-flex justify-content-center'>
             <div className='text-center'>
-               <Button className='text-center m-2' onClick={()=> addProduct(_id)} variant="dark">Agregar</Button>
-            </div>
-            <div className='text-center'>
-               <Button className='text-center m-2' variant="dark" ><Link to={"/item/" + _id} className='detalle'>Detalle</Link></Button>
+               <Button className='text-center m-2' onClick={()=> addProduct(_id)} variant="dark">Agregar al carrito</Button>
             </div>
             </div>
          </Card.Body>
          </Card>
       </div>
+      </>
    )
 }
 export default Items;

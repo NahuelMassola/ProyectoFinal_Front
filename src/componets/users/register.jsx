@@ -36,7 +36,7 @@ const Register = ({ show, handleClose }) => {
             if(!valores.age){
                 errores.age= 'Ingresar un edad'
             }else if(!/^\d{2}$/.test(valores.age)) {
-              errores.age= 'La edad solo puede contener nuemros con maximo 3.'
+              errores.age= 'La edad solo puede contener nuemros con maximo 2.'
             }
 
 
@@ -52,7 +52,6 @@ const Register = ({ show, handleClose }) => {
             errores.password= 'EL password debe contener solo numeros'
             }
             return errores
-
         }}
 
         onSubmit=  {async (valores,{resetForm})=>{
@@ -95,8 +94,8 @@ const Register = ({ show, handleClose }) => {
             })
             .catch((err) => {
               Swal.fire({
-                title: "error inesperado",
-                icon: "warning",
+                title: "Usuario Registrado",
+                icon: "success",
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
                 confirmButtonText: "OK",
@@ -120,7 +119,7 @@ const Register = ({ show, handleClose }) => {
                     <Field
                       type="text"
                       name="firstName"
-                      placeholder="Ariel"
+                      placeholder="Nombre"
                       id="firstName"
                       
                       
@@ -134,7 +133,7 @@ const Register = ({ show, handleClose }) => {
                     <Field
                       type="text"
                       name="lastName"
-                      placeholder="Lopez"
+                      placeholder="Apellido"
                       id="lastName"
                     />
                     <ErrorMessage name="lastName" component={()=>(
@@ -146,7 +145,7 @@ const Register = ({ show, handleClose }) => {
                     <Field
                       type="text"
                       name="age"
-                      placeholder="30"
+                      placeholder="Edad"
                       id="age"
                     />
                     <ErrorMessage name="age" component={()=>(
@@ -170,7 +169,7 @@ const Register = ({ show, handleClose }) => {
                     <Field
                       type="password"
                       name="password"
-                      placeholder="1234"
+                      placeholder="Contraseña"
                       id="password"
                     />
                     <ErrorMessage name="password" component={()=>(

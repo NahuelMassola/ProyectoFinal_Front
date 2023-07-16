@@ -41,6 +41,8 @@ const NavBar =()=> {
     });
   }
 
+  const  infouser = JSON.parse(localStorage.getItem('user'))
+    if(!infouser) {
     return(
       <>
       <div className="container-fluid navbar2">
@@ -55,9 +57,32 @@ const NavBar =()=> {
             <Logo/>
           </div>
           <div className="col col-lg-5 d-flex justify-content-end">
-            <Nav.Link className='text-white m-3' href="#home" onClick={handleShow}>Iniciar Session</Nav.Link>
-            <Nav.Link className='text-white m-3' href="#features" onClick={handleShowr}>Registrarse</Nav.Link>
-            <Nav.Link className='text-white m-3' href="#features" onClick={handlelogout}>cerrar Session </Nav.Link>
+            <Nav.Link className='text-white m-3' href="#login" onClick={handleShow}>Iniciar Session</Nav.Link>
+            <Nav.Link className='text-white m-3' href="#register" onClick={handleShowr}>Registrarse</Nav.Link>
+            <Carrito/>
+          </div>
+          {show && <Login show={show} handleClose={handleClose}/>}
+          {showr &&  <Register show={showr} handleClose={handleCloser} />}
+        </div>
+      </div>
+      </div>
+      </>
+    ) 
+    } return (
+      <>
+      <div className="container-fluid navbar2">
+      <div className="container ">
+        <div className="row ">
+          <div className="col col-lg-5 d-flex  justify-content-start">
+            <Nav.Link className='text-white m-3' href="/">Inicio</Nav.Link>
+            <Nav.Link className='text-white m-3' href="/contacto">Contacto</Nav.Link>
+            <Nav.Link className='text-white m-3' href="/products">productos</Nav.Link>
+          </div>
+          <div className="col col-lg-2 text-center">
+            <Logo/>
+          </div>
+          <div className="col col-lg-5 d-flex justify-content-end">
+            <Nav.Link className='text-white m-3' href="#logout" onClick={handlelogout}>cerrar Session </Nav.Link>
             <Carrito/>
           </div>
           {show && <Login show={show} handleClose={handleClose}/>}

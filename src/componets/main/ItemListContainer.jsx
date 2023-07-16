@@ -5,6 +5,7 @@ import axios from 'axios';
 const ItemListContainer = () => {
   const [data, setData] = useState([]);
 
+
   useEffect(() => {
       const renderProducts = async()=>{
         try {  
@@ -21,16 +22,23 @@ const ItemListContainer = () => {
       renderProducts() 
   }, []);
 
-  return (
-    <>
+
+  const  infouser = JSON.parse(localStorage.getItem('user'))
+    if(!infouser) {
+    return(
+      <>
+      <div>para ver los productos inicia sesion</div>
+      </>
+    ) 
+    } return (
+      <>
       <div className="container-fluid ">
         <h1 className="text-center m-5">{`PRODUCTOS`}</h1>
       </div>
       <div className="container-fluid">
       </div>
       {<ItemsList datos={data} />}
-      
       </>
-  )
+    )
 }
 export default ItemListContainer;
