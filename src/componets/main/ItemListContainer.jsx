@@ -27,10 +27,11 @@ const ItemListContainer = () => {
     if(!infouser) {
     return(
       <>
-      <div>para ver los productos inicia sesion</div>
+      <div className='d-flex justify-content-center align-items-center vh-100'><h1>INICIA SESION PARA VER LOS PRODUCTOS</h1></div>
       </>
     ) 
-    } return (
+    }
+    return (
       <>
       <div className="container-fluid ">
         <h1 className="text-center m-5">{`PRODUCTOS`}</h1>
