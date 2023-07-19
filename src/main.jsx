@@ -10,7 +10,7 @@ import Stripe from './componets/stripe/Stripe';
 import Principal from './componets/main/Principal';
 import Footer from './componets/Footer/footer';
 import Contacto from './componets/contacto/Contacto';
-import AddProduct from './componets/main/AddProduct';
+import AddProduct from './componets/main/AddProducts';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>

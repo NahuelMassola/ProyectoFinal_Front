@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Logo from './logo';
 import Login from '../users/login';
 import Register from '../users/register';
-import AddProduct from '../main/AddProduct';
+import AddProduct from '../main/AddProducts';
 import Carrito from './CardWidget';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
