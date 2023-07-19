@@ -7,7 +7,7 @@ export default class PaymentService {
     this.client = new AxiosClient();
   }
   createPaymentIntent = ({ cartId, callbackSuccess, callbackError }) => {
-    const requestInfo = { url: `http://localhost:8080/api/payments/?id=${cartId}`, callbackSuccess, callbackError };
+    const requestInfo = { url: `https://proyectofinalback-production-b4d4.up.railway.app/api/payments/?id=${cartId}`, callbackSuccess, callbackError };
 
     this.client.makePostRequest({ ...requestInfo });
   };
