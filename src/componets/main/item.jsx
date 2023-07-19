@@ -34,7 +34,7 @@ export const Items = ({ info }) => {
     } else {
       const { cart } = JSON.parse(user);
       const res = await axios({
-        url: `http://localhost:8080/api/carts/${cart}/product/${id}`,
+        url: `https://proyectofinalback-production-b4d4.up.railway.app/api/carts/${cart}/product/${id}`,
         method: 'POST',
         withCredentials: true,
       });
@@ -54,7 +54,7 @@ export const Items = ({ info }) => {
   const deleteProduct =async(pid) =>{
                             
     const res = await axios({
-      url:`http://localhost:8080/api/products/${pid}`,
+      url:`https://proyectofinalback-production-b4d4.up.railway.app/api/products/${pid}`,
       method: 'DELETE',
       withCredentials: true,
       })         

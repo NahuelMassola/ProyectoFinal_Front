@@ -15,7 +15,7 @@ const PaymentForm = () => {
     
     try {
       const response = await axios({
-      url:`http://localhost:8080/api/carts/${cid}/purchase`,
+      url:`https://proyectofinalback-production-b4d4.up.railway.app/api/carts/${cid}/purchase`,
       method: 'POST',
       withCredentials: true,
     

@@ -67,7 +67,7 @@ const AddProduct = ({ show, handleClose }) => {
         onSubmit={(valores, { resetForm }) => {
           console.log('submitting');
           axios
-            .post('http://localhost:8080/api/products/', valores, {
+            .post('https://proyectofinalback-production-b4d4.up.railway.app/api/products/', valores, {
               withCredentials: true,
             })
             .then(function (response) {

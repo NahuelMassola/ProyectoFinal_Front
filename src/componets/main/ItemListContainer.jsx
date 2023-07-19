@@ -10,7 +10,7 @@ const ItemListContainer = () => {
       const renderProducts = async()=>{
         try {  
           const res = await axios({
-          url:`http://localhost:8080/api/products`,
+          url:`https://proyectofinalback-production-b4d4.up.railway.app/api/products`,
           method: 'GET',
           withCredentials: true,
       })         

@@ -23,7 +23,7 @@ const NavBar = () => {
   const handleShowr = () => setShowr(true); // mostrar register
   const handlelogout = async () => {
     const res = await axios({
-      url: 'http://localhost:8080/api/session/logout',
+      url: 'https://proyectofinalback-production-b4d4.up.railway.app/api/session/logout',
       method: 'GET',
     });
 
