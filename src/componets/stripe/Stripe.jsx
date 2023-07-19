@@ -27,7 +27,7 @@ const Stripe = () => {
   }, [cid]);
 
   const callbackSuccessPaymentIntent = (res) => {
-       setClientSecret(res.data.payload.client_secret);
+      setClientSecret(res.data.payload.client_secret);
   };
 
   const callbackErrorPaymentIntent = (err) => {
@@ -35,15 +35,19 @@ const Stripe = () => {
   };
   return (
     <>
-       <div className={styles.container}>
-        <h1 className={styles.title}>Stripe</h1>
+      <div className='vh-100'>
+        <div className={styles.container}>
+          <h3 className="text-center mt-5">Ingrese los Datos para Generar la compra</h3>
       </div>
-      <div className={classnames([styles.container, styles.highlighted])}>
-        <Wrapper hidden={!clientSecret || !stripePromise}>
-          <Elements stripe={stripePromise} options={{ clientSecret: clientSecret }}>
-            <PaymentForm />
-          </Elements>
-        </Wrapper>
+        <div className='mt-5'>
+          <div className={classnames([styles.container, styles.highlighted])}>
+          <Wrapper hidden={!clientSecret || !stripePromise}>
+            <Elements stripe={stripePromise} options={{ clientSecret: clientSecret }}>
+              <PaymentForm />
+            </Elements>
+          </Wrapper>
+        </div>
+        </div>
       </div>
     </>
   );
